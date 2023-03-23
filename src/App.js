@@ -1,21 +1,22 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ForgotPassword from './ForgotPassword';
-import CreateAccount from './CreateAccount';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import ForgotPassword from './Pages/ForgotPassword';
+import CreateAccount from './Pages/CreateAccount';
+import EmailVerification from './Pages/EmailVerification';
 
 function App() {
   return (
     <div className="App">
-      <div className="login-container">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LoginForm/>} />
+            <Route path='/'/>
+            <Route path="/login" element={<LoginForm/>} />
             <Route path="/forgot-password" element={<ForgotPassword/>}/>
             <Route path="/create-account" element={<CreateAccount/>}/>
+            <Route path="/email-verification" element={<EmailVerification/>}/>
           </Routes>
         </BrowserRouter>
-      </div>
     </div>
   );
 }
@@ -28,6 +29,7 @@ function LoginForm() {
   };
 
   return (
+    <div className="login-container">
     <form className="login-form">
       <div className="login-header">
           <h1 className="login-title">Welcome Back!</h1>
@@ -47,6 +49,7 @@ function LoginForm() {
         <button className="create-account-btn" type="button" onClick={handleCreateAccount}>Create New Account</button>
       </div>
     </form>
+    </div>
   );
 }
 

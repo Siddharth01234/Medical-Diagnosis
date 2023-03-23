@@ -32,7 +32,7 @@ function ForgotPassword() {
   };
 
   return (
-    <div className="forgot-password-container">
+    <div className="login-container">
       <h1 className="forgot-password-title">Forgot Password?</h1>
       <form className="forgot-password-form" onSubmit={handleForgotPassword}>
         <div className="form-group">
@@ -49,7 +49,7 @@ function ForgotPassword() {
           />
         </div>
         <button
-          className="reset-password-btn"
+          className="login-btn"
           type="button"
           disabled={!isValidEmail}
         >
@@ -60,5 +60,4 @@ function ForgotPassword() {
     </div>
   );
 }
-
 export default ForgotPassword;
