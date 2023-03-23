@@ -4,8 +4,18 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import ForgotPassword from './Pages/ForgotPassword';
 import CreateAccount from './Pages/CreateAccount';
 import EmailVerification from './Pages/EmailVerification';
+import {getDatabase ,ref,set } from "firebase/database";
+import {app}  from "./firebase";
+const db = getDatabase(app);
 
 function App() {
+  const putData=() =>{
+    set(ref(db,"user/sid1"),{
+      id : 1,
+      name : "siddharth",
+      age :19,
+    });
+  };
   return (
     <div className="App">
         <BrowserRouter>
